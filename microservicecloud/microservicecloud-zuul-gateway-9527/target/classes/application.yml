@@ -12,7 +12,17 @@ eureka:
   instance:
     instance-id: gateway-9527.com
     prefer-ip-address: true 
+#http://myzuul.com:9527/microservicecloud-dept/dept/list
+#http://myzuul.com:9527/ceair/mydept/dept/list
+zuul: 
+  #ignored-services: microservicecloud-dept
+  prefix: /ceair
+  ignored-services: "*"
+  routes: 
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
  
+  
 info:
   app.name: ceair-microservicecloud
   company.name: www.ceair.com
