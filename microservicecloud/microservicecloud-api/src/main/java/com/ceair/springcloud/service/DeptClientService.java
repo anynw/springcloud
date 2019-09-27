@@ -13,7 +13,8 @@ import com.ceair.springcloud.entities.Dept;
  * @author Administrator
  * @date 2019年9月23日 下午11:04:35
  */
-@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+//@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+@FeignClient(value = "MICROSERVICECLOUD-DEPT",fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
 	
 	@RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
