@@ -1,4 +1,4 @@
-package ceairtest.app;
+package test.app;
 
 import java.time.LocalDateTime;
 
